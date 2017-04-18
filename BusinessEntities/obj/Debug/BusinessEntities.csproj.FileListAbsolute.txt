@@ -1,0 +1,5 @@
+C:\Projects\FMS\Development\com.app.fms\BusinessEntities\bin\Debug\BusinessEntities.dll
+C:\Projects\FMS\Development\com.app.fms\BusinessEntities\bin\Debug\BusinessEntities.pdb
+C:\Projects\FMS\Development\com.app.fms\BusinessEntities\obj\Debug\BusinessEntities.dll
+C:\Projects\FMS\Development\com.app.fms\BusinessEntities\obj\Debug\BusinessEntities.pdb
+C:\Projects\FMS\Development\com.app.fms\BusinessEntities\obj\Debug\BusinessEntities.csprojResolveAssemblyReference.cache

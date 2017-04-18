@@ -1,0 +1,13 @@
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\bin\Release\DataAccessLayer.dll.config
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\bin\Release\DataAccessLayer.dll
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\bin\Release\DataAccessLayer.pdb
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\bin\Release\EntityFramework.dll
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\bin\Release\EntityFramework.SqlServer.dll
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\bin\Release\EntityFramework.xml
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\bin\Release\EntityFramework.SqlServer.xml
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.CreateEmployeePersonalInfoTable.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.AddedIsActiveColumn.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.csproj.GenerateResource.Cache
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.dll
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.pdb

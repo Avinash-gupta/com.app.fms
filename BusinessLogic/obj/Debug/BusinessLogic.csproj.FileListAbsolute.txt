@@ -1,0 +1,16 @@
+C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Debug\AutoMapper.Net4.dll
+C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Debug\AutoMapper.dll
+C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Debug\BusinessEntities.dll
+C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Debug\DataAccessLayer.dll
+C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Debug\BusinessEntities.pdb
+C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Debug\DataAccessLayer.pdb
+C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Debug\AutoMapper.pdb
+C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Debug\AutoMapper.xml
+C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Debug\AutoMapper.Net4.pdb
+C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Projects\FMS\Development\com.app.fms\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Projects\FMS\Development\com.app.fms\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Projects\FMS\Development\com.app.fms\BusinessLogic\obj\Debug\BusinessLogic.pdb

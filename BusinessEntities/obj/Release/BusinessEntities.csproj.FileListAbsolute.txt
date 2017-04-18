@@ -1,0 +1,4 @@
+C:\Projects\FMS\Development\com.app.fms\BusinessEntities\bin\Release\BusinessEntities.dll
+C:\Projects\FMS\Development\com.app.fms\BusinessEntities\bin\Release\BusinessEntities.pdb
+C:\Projects\FMS\Development\com.app.fms\BusinessEntities\obj\Release\BusinessEntities.dll
+C:\Projects\FMS\Development\com.app.fms\BusinessEntities\obj\Release\BusinessEntities.pdb
