@@ -1,0 +1,6 @@
+C:\Projects\FMS\Development\com.app.fms\Sample\bin\Debug\Sample.exe.config
+C:\Projects\FMS\Development\com.app.fms\Sample\bin\Debug\Sample.exe
+C:\Projects\FMS\Development\com.app.fms\Sample\bin\Debug\Sample.pdb
+C:\Projects\FMS\Development\com.app.fms\Sample\obj\Debug\Sample.csprojResolveAssemblyReference.cache
+C:\Projects\FMS\Development\com.app.fms\Sample\obj\Debug\Sample.exe
+C:\Projects\FMS\Development\com.app.fms\Sample\obj\Debug\Sample.pdb

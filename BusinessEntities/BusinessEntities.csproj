@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BusinessEntities</RootNamespace>
     <AssemblyName>BusinessEntities</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs" />
+    <Compile Include="ClientEntity.cs" />
+    <Compile Include="ClientSearchResults.cs" />
     <Compile Include="Employee\Employee.cs" />
     <Compile Include="Employee\EmployeeBANK_PF_ESI.cs" />
+    <Compile Include="Employee\EmployeeEntity.cs" />
     <Compile Include="Employee\EmployeePersonlInfo.cs" />
     <Compile Include="Employee\EmployeeReferences.cs" />
     <Compile Include="Employee\EmployeeSearchResults.cs" />

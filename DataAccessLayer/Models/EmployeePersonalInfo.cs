@@ -7,7 +7,7 @@ namespace DataAccessLayer.Models
     {
         public int Id { get; set; }
         [Required]
-        public string EmpID { get; set; }
+        public int EmpId { get; set; }
         public string Title { get; set; }
         [Required]
         public string FirstName { get; set; }

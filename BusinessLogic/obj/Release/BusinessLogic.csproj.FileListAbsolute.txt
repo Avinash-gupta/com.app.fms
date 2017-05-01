@@ -4,7 +4,6 @@ C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Release\BusinessLogic.
 C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Release\AutoMapper.dll
 C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Release\BusinessEntities.dll
 C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Release\DataAccessLayer.dll
-C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Release\EntityFramework.dll
 C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Release\BusinessEntities.pdb
 C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Release\DataAccessLayer.pdb
 C:\Projects\FMS\Development\com.app.fms\BusinessLogic\bin\Release\AutoMapper.pdb

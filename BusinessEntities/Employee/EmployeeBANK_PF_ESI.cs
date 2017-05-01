@@ -1,4 +1,4 @@
-﻿namespace BusinessEntities.Employee
+﻿namespace BusinessEntities.Employees
 {
     public class EmployeeBANK_PF_ESIEntity
     {

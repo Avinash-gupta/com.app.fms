@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BusinessEntities.Employee
+namespace BusinessEntities.Employees
 {
     public class EmployeePersonlInfoEntity
     {

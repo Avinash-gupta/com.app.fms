@@ -11,3 +11,10 @@ C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLa
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.csproj.GenerateResource.Cache
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.dll
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.pdb
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.NewEmployeeTables.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.UpdatedSchemaForEmployeeProofsAndEmployeeAddressDetails.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.RemovedIDAndMadeEMpIdAsKey.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.RevertedbackPreviousChange.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.CreatedNewTablesClientInformationAndBillingAddress.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.AddedIsActiveColumntoClientInformation.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.ClientIdIsRequired.resources
