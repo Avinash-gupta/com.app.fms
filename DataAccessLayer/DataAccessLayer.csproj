@@ -88,9 +88,38 @@
     <Compile Include="Migrations\201705010809540_ClientIdIsRequired.Designer.cs">
       <DependentUpon>201705010809540_ClientIdIsRequired.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705031054337_CreatedTablesForContracts.cs" />
+    <Compile Include="Migrations\201705031054337_CreatedTablesForContracts.Designer.cs">
+      <DependentUpon>201705031054337_CreatedTablesForContracts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705031057349_AddedNewColumnsToContractInformation.cs" />
+    <Compile Include="Migrations\201705031057349_AddedNewColumnsToContractInformation.Designer.cs">
+      <DependentUpon>201705031057349_AddedNewColumnsToContractInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705041403524_ChangesInContractTables.cs" />
+    <Compile Include="Migrations\201705041403524_ChangesInContractTables.Designer.cs">
+      <DependentUpon>201705041403524_ChangesInContractTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705041426494_UpdateContractsTableColumnstoDateTimeType.cs" />
+    <Compile Include="Migrations\201705041426494_UpdateContractsTableColumnstoDateTimeType.Designer.cs">
+      <DependentUpon>201705041426494_UpdateContractsTableColumnstoDateTimeType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705041450567_RemovedCreatedDateTimeinContracts.cs" />
+    <Compile Include="Migrations\201705041450567_RemovedCreatedDateTimeinContracts.Designer.cs">
+      <DependentUpon>201705041450567_RemovedCreatedDateTimeinContracts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705041455516_RemovedCreatedDateTimeInAllTables.cs" />
+    <Compile Include="Migrations\201705041455516_RemovedCreatedDateTimeInAllTables.Designer.cs">
+      <DependentUpon>201705041455516_RemovedCreatedDateTimeInAllTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BillingDetails.cs" />
     <Compile Include="Models\ClientInformation.cs" />
+    <Compile Include="Models\ContractBilling.cs" />
+    <Compile Include="Models\ContractHumanResourceNeeds.cs" />
+    <Compile Include="Models\ContractInformation.cs" />
+    <Compile Include="Models\ContractInvoiceHeadingText.cs" />
+    <Compile Include="Models\ContractPaysheet.cs" />
     <Compile Include="Models\EmployeeAddressDetails.cs" />
     <Compile Include="Models\EmployeeBankDetails.cs" />
     <Compile Include="Models\EmployeeEducationDetails.cs" />
@@ -138,6 +167,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705010809540_ClientIdIsRequired.resx">
       <DependentUpon>201705010809540_ClientIdIsRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705031054337_CreatedTablesForContracts.resx">
+      <DependentUpon>201705031054337_CreatedTablesForContracts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705031057349_AddedNewColumnsToContractInformation.resx">
+      <DependentUpon>201705031057349_AddedNewColumnsToContractInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705041403524_ChangesInContractTables.resx">
+      <DependentUpon>201705041403524_ChangesInContractTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705041426494_UpdateContractsTableColumnstoDateTimeType.resx">
+      <DependentUpon>201705041426494_UpdateContractsTableColumnstoDateTimeType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705041450567_RemovedCreatedDateTimeinContracts.resx">
+      <DependentUpon>201705041450567_RemovedCreatedDateTimeinContracts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705041455516_RemovedCreatedDateTimeInAllTables.resx">
+      <DependentUpon>201705041455516_RemovedCreatedDateTimeInAllTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

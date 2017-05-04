@@ -82,4 +82,3 @@ C:\Projects\FMS\Development\com.app.fms\com.app.fms\bin\AutoMapper.xml
 C:\Projects\FMS\Development\com.app.fms\com.app.fms\obj\Debug\com.app.fms.csprojResolveAssemblyReference.cache
 C:\Projects\FMS\Development\com.app.fms\com.app.fms\obj\Debug\com.app.fms.dll
 C:\Projects\FMS\Development\com.app.fms\com.app.fms\obj\Debug\com.app.fms.pdb
-C:\Projects\FMS\Development\com.app.fms\com.app.fms\bin\AutoMapper.Net4.dll

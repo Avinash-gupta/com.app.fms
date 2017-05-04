@@ -1,8 +1,7 @@
 namespace DataAccessLayer.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class ClientIdIsRequired : DbMigration
     {
         public override void Up()

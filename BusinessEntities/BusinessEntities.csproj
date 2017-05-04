@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientEntity.cs" />
-    <Compile Include="ClientSearchResults.cs" />
+    <Compile Include="Client\ClientEntity.cs" />
+    <Compile Include="Client\ClientSearchResults.cs" />
+    <Compile Include="Contract\ContractEntity.cs" />
+    <Compile Include="Contract\ContractSearchResults.cs" />
     <Compile Include="Employee\Employee.cs" />
     <Compile Include="Employee\EmployeeBANK_PF_ESI.cs" />
     <Compile Include="Employee\EmployeeEntity.cs" />

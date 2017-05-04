@@ -21,6 +21,7 @@ namespace BusinessEntities.Employee
 
     public class EmployeePersonalInfoEntity
     {
+        public int Id { get; set; }
         public int EmpID { get; set; }
         public string Title { get; set; }
         public string FirstName { get; set; }
@@ -63,6 +64,7 @@ namespace BusinessEntities.Employee
 
     public class EmployeeInfoEntity
     {
+        public int Id { get; set; }
         public string RefNameAndAddress1 { get; set; }
         public string RefNameAndAddress2 { get; set; }
         public string BloodGroup { get; set; }
@@ -76,6 +78,7 @@ namespace BusinessEntities.Employee
 
     public class EmployeePhysicalStandardEntity
     {
+        public int Id { get; set; }
         public int Height { get; set; }
         public int Weight { get; set; }
         public string HairColour { get; set; }
@@ -86,6 +89,7 @@ namespace BusinessEntities.Employee
 
     public class EmployeeAddressDetailsEntity
     {
+        public int Id { get; set; }
         public string TmpAddressLine1 { get; set; }
         public string TmpAddressLine2 { get; set; }
         public string TmpLandMark { get; set; }
@@ -103,24 +107,9 @@ namespace BusinessEntities.Employee
         public string PerPincode { get; set; }
     }
 
-    //public class EmployeeAddressDetailsEntity
-    //{
-    //    public AddressType AddressType { get; set; }
-    //    public string LandMark { get; set; }
-    //    public string VillageOrTown { get; set; }
-    //    public string PostOffice { get; set; }
-    //    public string Taluka { get; set; }
-    //    public string PoliceStation { get; set; }
-    //    public string State { get; set; }
-    //    public string District { get; set; }
-    //    public string Pincode { get; set; }
-    //    public DateTime DateSinceResiding { get; set; }
-    //    public int PeriodOfStay { get; set; }
-    //    public int Phone { get; set; }
-    //}
-
     public class EmployeeBankDetailsEntity
     {
+        public int Id { get; set; }
         public string BankName { get; set; }
         public int BankAccountNo { get; set; }
         public string BranchName { get; set; }
@@ -140,6 +129,7 @@ namespace BusinessEntities.Employee
 
     public class EmployeeSalaryDetailsEntity
     {
+        public int Id { get; set; }
         public int AdditionalAmount { get; set; }
         public int FoodAllowance { get; set; }
         public string NoOfDays { get; set; }
@@ -175,6 +165,7 @@ namespace BusinessEntities.Employee
 
     public class EmployeeProofsEntity
     {
+        public int Id { get; set; }
         public string AadharCardNumber { get; set; }
         public string AadharCardName { get; set; }
         public string DrivingLicenseNumber { get; set; }
@@ -204,16 +195,9 @@ namespace BusinessEntities.Employee
         public string OtherCardsName { get; set; }
     }
 
-
-    //public class EmployeeProofsEntity
-    //{
-    //    public ProofType ProofType { get; set; }
-    //    public int Number { get; set; }
-    //    public string KYCName { get; set; }
-    //}
-
     public class EmployeeExServiceEntity
     {
+        public int Id { get; set; }
         public bool EmpExService { get; set; }
         public int ServiceNo { get; set; }
         public int Rank { get; set; }
@@ -268,6 +252,7 @@ namespace BusinessEntities.Employee
 
     public class EmployeePolicyRecordEntity
     {
+        public int Id { get; set; }
         public string PoliceVerificationNumber { get; set; }
         public bool IsVerfied { get; set; }
         public string NearestPoliceStation { get; set; }

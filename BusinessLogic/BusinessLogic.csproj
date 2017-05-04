@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientLogic.cs" />
+    <Compile Include="ContractLogic.cs" />
     <Compile Include="EmployeeLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -8,6 +8,7 @@
 
     public class ClientInformationEntity
     {
+        public int Id { get; set; }
         public string ClientId { get; set; }
         public string Name { get; set; }
         public string ShortName { get; set; }
@@ -22,6 +23,7 @@
 
     public class BillingDetailsEntity
     {
+        public int Id { get; set; }
         public string LineOne { get; set; }
         public string LineTwo { get; set; }
         public string LineThree { get; set; }

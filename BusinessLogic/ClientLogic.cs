@@ -1,9 +1,6 @@
 ﻿using DataAccessLayer;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AutoMapper;
 using BusinessEntities;
 using DataAccessLayer.Models;
@@ -29,15 +26,16 @@ namespace BusinessLogic
             {
                 var client = Mapper.Map<ClientInformation>(clientEntity.clientInformation);
                 client.IsActive = true;
-                client.CreatedDateTime = DateTime.Now;
-                client.UpdatedDateTim = DateTime.Now;
                 var i = _unitOfWork.ClientInformationRepository.GetCount() + 1;
                 var clientId = "C" + i;
                 client.ClientId = clientId;
                 var billing = Mapper.Map<BillingDetails>(clientEntity.billingDetails);
-                billing.ClientId = clientId;
+                if(billing != null)
+                {
+                    billing.ClientId = clientId;
+                    _unitOfWork.BillingDetailsRepository.Insert(billing);
+                }
                 _unitOfWork.ClientInformationRepository.Insert(client);
-                _unitOfWork.BillingDetailsRepository.Insert(billing);
                 _unitOfWork.Save();
             }
             catch(Exception ex)
@@ -50,8 +48,6 @@ namespace BusinessLogic
         {
             try
             {
-
-
                 var clientInformation = _unitOfWork.ClientInformationRepository.GetSingle(c => c.ClientId == clientId);
                 var billingDetails = _unitOfWork.BillingDetailsRepository.GetSingle(b => b.ClientId == clientId);
                 return new ClientEntity
@@ -121,26 +117,15 @@ namespace BusinessLogic
         {
             try
             {
-                int Id = 0;
-                var clientInformation = Mapper.Map<ClientInformation>(clientEntity.clientInformation);
-                var billingDetails = Mapper.Map<BillingDetails>(clientEntity.billingDetails);
-                using (var context = new FMSGlobalDbContext())
+                var _clientInformation = Mapper.Map<ClientInformation>(clientEntity.clientInformation);
+                var _billingDetails = Mapper.Map<BillingDetails>(clientEntity.billingDetails);
+                _billingDetails.ClientId = _clientInformation.ClientId;
+                _unitOfWork.ClientInformationRepository.Update(_clientInformation);
+                if(_billingDetails != null)
                 {
-                    var clientList = context.ClientInformation.ToList();
-                    foreach (var client in clientList)
-                    {
-                        if (client.ClientId == clientEntity.clientInformation.ClientId)
-                        {
-                            Id = client.Id;
-                            break;
-                        }
-                    }
+                    _billingDetails.ClientId = _clientInformation.ClientId;
+                    _unitOfWork.BillingDetailsRepository.Update(_billingDetails);
                 }
-                clientInformation.Id = Id;
-                clientInformation.UpdatedDateTim = DateTime.Now;
-                billingDetails.Id = Id;
-                _unitOfWork.ClientInformationRepository.Update(clientInformation);
-                _unitOfWork.BillingDetailsRepository.Update(billingDetails);
                 _unitOfWork.Save();
             }
             catch(Exception ex)

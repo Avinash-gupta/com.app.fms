@@ -38,5 +38,10 @@ namespace DataAccessLayer
         public virtual DbSet<EmployeeSalaryDetails> EmployeeSalaryDetails { get; set; }
         public virtual DbSet<ClientInformation> ClientInformation { get; set; }
         public virtual DbSet<BillingDetails> BillingDetails { get; set; }
+        public virtual DbSet<ContractBilling> ContractBilling { get; set; }
+        public virtual DbSet<ContractHumanResourceNeeds> ContractHumanResourceNeeds { get; set; }
+        public virtual DbSet<ContractInformation> ContractInformation { get; set; }
+        public virtual DbSet<ContractInvoiceHeadingText> ContractInvoiceHeadingText { get; set; }
+        public virtual DbSet<ContractPaysheet> ContractPaysheet { get; set; }
     }
 }

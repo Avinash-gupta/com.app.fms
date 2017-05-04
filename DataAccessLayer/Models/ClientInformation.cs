@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccessLayer.Models
 {
@@ -22,7 +18,5 @@ namespace DataAccessLayer.Models
         public string EmailId { get; set; }
         public int FaxNo { get; set; }
         public bool IsActive { get; set; }
-        public DateTime CreatedDateTime { get; set; }
-        public DateTime UpdatedDateTim { get; set; }
     }
 }

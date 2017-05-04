@@ -50,8 +50,6 @@ namespace BusinessLogic
             {
                 var EmpId = _unitOfWork.EmployeePersonalInfoRepository.GetCount() + 1;
                 var employeePersonalInfo = Mapper.Map<EmployeePersonalInfo>(employeeEntity.EmployeePersonalInfo);
-                employeePersonalInfo.CreatedDateTime = DateTime.Now;
-                employeePersonalInfo.UpdatedDateTime = DateTime.Now;
                 var employeeInfo = Mapper.Map<EmployeeInfo>(employeeEntity.EmployeeInfo);
                 var employeePhysicalStandard = Mapper.Map<EmployeePhysicalStandard>(employeeEntity.EmployeePhysicalStandard);
                 var employeeAddressDetails = Mapper.Map<EmployeeAddressDetails>(employeeEntity.EmployeeAddressDetails);
@@ -82,46 +80,71 @@ namespace BusinessLogic
                     employeePreviousExperienceDetails.Add(experienceDetails);
                 }
 
-                employeePersonalInfo.IsActive = true;
-                employeePersonalInfo.EmpId = EmpId;
-                employeeInfo.EmpId = EmpId;
-                employeePhysicalStandard.EmpId = EmpId;
-                employeeAddressDetails.EmpId = EmpId;
-                employeeBankDetails.EmpId = EmpId;
-                employeeSalaryDetails.EmpId = EmpId;
-                employeeProofs.EmpId = EmpId;
-                employeeExService.EmpId = EmpId;
-                employeePolicyRecord.EmpId = EmpId;
+                if (employeePersonalInfo != null)
+                {
+                    employeePersonalInfo.IsActive = true;
+                    employeePersonalInfo.EmpId = EmpId;
+                    _unitOfWork.EmployeePersonalInfoRepository.Insert(employeePersonalInfo);
+                }
+                if (employeeInfo != null)
+                {
+                    employeeInfo.EmpId = EmpId;
+                    _unitOfWork.EmployeeInfoRepository.Insert(employeeInfo);
+                }
+                if(employeePhysicalStandard != null)
+                {
+                    employeePhysicalStandard.EmpId = EmpId;
+                    _unitOfWork.EmployeePhysicalStandardRepository.Insert(employeePhysicalStandard);
+                }
+                if(employeeAddressDetails != null)
+                {
+                    employeeAddressDetails.EmpId = EmpId;
+                    _unitOfWork.EmployeeAddressDetailsRepository.Insert(employeeAddressDetails);
+                }
+                if(employeeBankDetails != null)
+                {
+                    employeeBankDetails.EmpId = EmpId;
+                    _unitOfWork.EmployeeBankDetailsRepository.Insert(employeeBankDetails);
+                }
+                if(employeeSalaryDetails != null)
+                {
+                    employeeSalaryDetails.EmpId = EmpId;
+                    _unitOfWork.EmployeeSalaryDetailsRepository.Insert(employeeSalaryDetails);
+                }
+                if(employeeProofs != null)
+                {
+                    employeeProofs.EmpId = EmpId;
+                    _unitOfWork.EmployeeProofsRepository.Insert(employeeProofs);
+                }
+                if(employeeExService != null)
+                {
+                    employeeExService.EmpId = EmpId;
+                    _unitOfWork.EmployeeExServiceRepository.Insert(employeeExService);
+                }
+                if(employeePolicyRecord != null)
+                {
+                    employeePolicyRecord.EmpId = EmpId;
+                    _unitOfWork.EmployeePolicyRecordRepository.Insert(employeePolicyRecord);
+                }
 
-                _unitOfWork.EmployeePersonalInfoRepository.Insert(employeePersonalInfo);
-                _unitOfWork.EmployeeInfoRepository.Insert(employeeInfo);
-                _unitOfWork.EmployeePhysicalStandardRepository.Insert(employeePhysicalStandard);
-                _unitOfWork.EmployeeAddressDetailsRepository.Insert(employeeAddressDetails);
-                _unitOfWork.EmployeeBankDetailsRepository.Insert(employeeBankDetails);
-                _unitOfWork.EmployeeSalaryDetailsRepository.Insert(employeeSalaryDetails);
-                _unitOfWork.EmployeeProofsRepository.Insert(employeeProofs);
-                _unitOfWork.EmployeeExServiceRepository.Insert(employeeExService);
-                foreach(var employeeFamilyDetail in employeeFamilyDetails)
+                foreach (var employeeFamilyDetail in employeeFamilyDetails)
                 {
                     _unitOfWork.EmployeeFamilyDetailsRepository.Insert(employeeFamilyDetail);
                 }
-
                 foreach (var employeeEducationDetail in employeeEducationDetails)
                 {
                     _unitOfWork.EmployeeEducationDetailsRepository.Insert(employeeEducationDetail);
                 }
-
                 foreach (var employeePreviousExperienceDetail in employeePreviousExperienceDetails)
                 {
                     _unitOfWork.EmployeePreviousExperienceRepository.Insert(employeePreviousExperienceDetail);
                 }
-                _unitOfWork.EmployeePolicyRecordRepository.Insert(employeePolicyRecord);
 
                 _unitOfWork.Save();
             }
             catch(Exception ex)
             {
-
+                throw ex;
             }
         }
 
@@ -186,7 +209,7 @@ namespace BusinessLogic
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
 
@@ -207,7 +230,6 @@ namespace BusinessLogic
                         Status = employee.Status
                     });
                 }
-                //var employeePersonalnfoEntityList = Mapper.Map<IList<EmployeePersonalInfo>, IList<Employee>>(employeePersonalInfoList);
                 return searchResults;
             }
             catch(Exception ex)
@@ -224,25 +246,9 @@ namespace BusinessLogic
             var familyList = new List<EmployeeFamilyDetails>();
             var educationList = new List<EmployeeEducationDetails>();
             var expList = new List<EmployeePreviousExperience>();
-            int Id = 0;
             try
             {
-                using (var context = new FMSGlobalDbContext())
-                {
-                    var employeePersonalInfoList = context.EmployeePersonalInfo.ToList();
-                    foreach(var employee in employeePersonalInfoList)
-                    {
-                        if (employee.EmpId == employeeEntity.EmployeePersonalInfo.EmpID)
-                        {
-                            Id = employee.Id;
-                            break;
-                        }
-                    }
-                }
-                    //var Id = _unitOfWork.EmployeePersonalInfoRepository.GetFirst(e => e.EmpId == employeeEntity.EmployeePersonalInfo.EmpID).Id;
-                    //var Id = 1;
                 var employeePersonalInfo = Mapper.Map<EmployeePersonalInfo>(employeeEntity.EmployeePersonalInfo);
-                employeePersonalInfo.UpdatedDateTime = DateTime.Now;
                 var employeeInfo = Mapper.Map<EmployeeInfo>(employeeEntity.EmployeeInfo);
                 var employeePhysicalStandard = Mapper.Map<EmployeePhysicalStandard>(employeeEntity.EmployeePhysicalStandard);
                 var employeeAddressDetails = Mapper.Map<EmployeeAddressDetails>(employeeEntity.EmployeeAddressDetails);
@@ -251,87 +257,75 @@ namespace BusinessLogic
                 var employeeProofs = Mapper.Map<EmployeeProofs>(employeeEntity.EmployeeProofs);
                 var employeeExService = Mapper.Map<EmployeeExService>(employeeEntity.EmployeeExService);
                 var employeePolicyRecord = Mapper.Map<EmployeePolicyRecord>(employeeEntity.EmployeePolicyRecord);
-                using (var context = new FMSGlobalDbContext())
+
+                foreach (var employeeFamilyDetail in employeeEntity.EmployeeFamilyDetails)
                 {
-                    familyList = context.EmployeeFamilyDetails.ToList();
-                    educationList = context.EmployeeEducationDetails.ToList();
-                    expList = context.EmployeePreviousExperience.ToList();
+                    var familyDetails = Mapper.Map<EmployeeFamilyDetails>(employeeFamilyDetail);
+                    familyDetails.EmpId = employeeEntity.EmployeePersonalInfo.EmpID;
+                    employeeFamilyDetails.Add(familyDetails);
                 }
 
-                foreach (var item in familyList)
+                foreach (var employeeEducationDetail in employeeEntity.EmployeeEducationDetails)
                 {
-                    foreach (var employeeFamilyDetail in employeeEntity.EmployeeFamilyDetails)
-                    {
-                        var familyDetails = Mapper.Map<EmployeeFamilyDetails>(employeeFamilyDetail);
-                        if (item.EmpId == employeeEntity.EmployeePersonalInfo.EmpID && familyDetails.Id == 0)
-                        {
-                            familyDetails.Id = item.Id;
-                            familyDetails.EmpId = item.EmpId;
-                        }
-                        employeeFamilyDetails.Add(familyDetails);
-                    }
+                    var educationDetails = Mapper.Map<EmployeeEducationDetails>(employeeEducationDetail);
+                    educationDetails.EmpId = employeeEntity.EmployeePersonalInfo.EmpID;
+                    employeeEducationDetails.Add(educationDetails);
                 }
 
-                foreach (var item in educationList)
+                foreach (var employeePreviousExperience in employeeEntity.EmployeePreviousExperience)
                 {
-                    foreach (var employeeEducationDetail in employeeEntity.EmployeeEducationDetails)
-                    {
-                        var educationDetails = Mapper.Map<EmployeeEducationDetails>(employeeEducationDetail);
-                        if (item.EmpId == employeeEntity.EmployeePersonalInfo.EmpID && educationDetails.Id == 0)
-                        {
-                            educationDetails.Id = item.Id;
-                            educationDetails.EmpId = item.EmpId;
-                            employeeEducationDetails.Add(educationDetails);
-                            break;
-                        }
-                    }
+                    var experienceDetails = Mapper.Map<EmployeePreviousExperience>(employeePreviousExperience);
+                    experienceDetails.EmpId = employeeEntity.EmployeePersonalInfo.EmpID;
+                    employeePreviousExperienceDetails.Add(experienceDetails);
+                }
+                if(employeePersonalInfo != null)
+                {
+                    _unitOfWork.EmployeePersonalInfoRepository.Update(employeePersonalInfo);
+                }
+                if(employeeInfo != null)
+                {
+                    employeeInfo.EmpId = employeePersonalInfo.EmpId;
+                    _unitOfWork.EmployeeInfoRepository.Update(employeeInfo);
+                }
+                if(employeePhysicalStandard != null)
+                {
+                    employeePhysicalStandard.EmpId = employeePersonalInfo.EmpId; ;
+                    _unitOfWork.EmployeePhysicalStandardRepository.Update(employeePhysicalStandard);
+                }
+                if(employeeAddressDetails != null)
+                {
+                    employeeAddressDetails.EmpId = employeePersonalInfo.EmpId;
+                    _unitOfWork.EmployeeAddressDetailsRepository.Update(employeeAddressDetails);
+                }
+                if (employeeBankDetails != null)
+                {
+                    employeeBankDetails.EmpId = employeePersonalInfo.EmpId;
+                    _unitOfWork.EmployeeBankDetailsRepository.Update(employeeBankDetails);
+                }
+                if(employeeSalaryDetails != null)
+                {
+                    employeeSalaryDetails.EmpId = employeePersonalInfo.EmpId;
+                    _unitOfWork.EmployeeSalaryDetailsRepository.Update(employeeSalaryDetails);
+                }
+                if(employeeProofs != null)
+                {
+                    employeeProofs.EmpId = employeePersonalInfo.EmpId;
+                    _unitOfWork.EmployeeProofsRepository.Update(employeeProofs);
+                }
+                if(employeeExService != null)
+                {
+                    employeeExService.EmpId = employeePersonalInfo.EmpId;
+                    _unitOfWork.EmployeeExServiceRepository.Update(employeeExService);
+                }
+                if(employeePolicyRecord != null)
+                {
+                    employeePolicyRecord.EmpId = employeePersonalInfo.EmpId;
+                    _unitOfWork.EmployeePolicyRecordRepository.Update(employeePolicyRecord);
                 }
 
-                foreach (var item in expList)
-                {
-                    foreach (var employeePreviousExperience in employeeEntity.EmployeePreviousExperience)
-                    {
-                        var experienceDetails = Mapper.Map<EmployeePreviousExperience>(employeePreviousExperience);
-                        if (item.EmpId == employeeEntity.EmployeePersonalInfo.EmpID && experienceDetails.Id == 0)
-                        {
-                            experienceDetails.Id = item.Id;
-                            experienceDetails.EmpId = item.EmpId;
-                            employeePreviousExperienceDetails.Add(experienceDetails);
-                            break;
-                        }
-                    }
-                }
-
-                employeePersonalInfo.Id = Id;
-                employeeInfo.Id = Id;
-                employeePhysicalStandard.Id = Id;
-                employeeAddressDetails.Id = Id;
-                employeeBankDetails.Id = Id;
-                employeeSalaryDetails.Id = Id;
-                employeeProofs.Id = Id;
-                employeeExService.Id = Id;
-                employeePolicyRecord.Id = Id;
-
-                employeeInfo.EmpId = employeePersonalInfo.EmpId;
-                employeePhysicalStandard.EmpId = employeePersonalInfo.EmpId;
-                employeeAddressDetails.EmpId = employeePersonalInfo.EmpId;
-                employeeBankDetails.EmpId = employeePersonalInfo.EmpId;
-                employeeSalaryDetails.EmpId = employeePersonalInfo.EmpId;
-                employeeProofs.EmpId = employeePersonalInfo.EmpId;
-                employeeExService.EmpId = employeePersonalInfo.EmpId;
-                employeePolicyRecord.EmpId = employeePersonalInfo.EmpId;
-
-                _unitOfWork.EmployeePersonalInfoRepository.Update(employeePersonalInfo);
-                _unitOfWork.EmployeeInfoRepository.Update(employeeInfo);
-                _unitOfWork.EmployeePhysicalStandardRepository.Update(employeePhysicalStandard);
-                _unitOfWork.EmployeeAddressDetailsRepository.Update(employeeAddressDetails);
-                _unitOfWork.EmployeeBankDetailsRepository.Update(employeeBankDetails);
-                _unitOfWork.EmployeeSalaryDetailsRepository.Update(employeeSalaryDetails);
-                _unitOfWork.EmployeeProofsRepository.Update(employeeProofs);
-                _unitOfWork.EmployeeExServiceRepository.Update(employeeExService);
                 foreach (var employeeFamilyDetail in employeeFamilyDetails)
                 {
-                    if (employeeFamilyDetail.EmpId == 0)
+                    if (employeeFamilyDetail.Id == 0)
                     {
                         _unitOfWork.EmployeeFamilyDetailsRepository.Insert(employeeFamilyDetail);
                     }
@@ -343,7 +337,7 @@ namespace BusinessLogic
 
                 foreach (var employeeEducationDetail in employeeEducationDetails)
                 {
-                    if (employeeEducationDetail.EmpId == 0)
+                    if (employeeEducationDetail.Id == 0)
                     {
                         _unitOfWork.EmployeeEducationDetailsRepository.Insert(employeeEducationDetail);
                     }
@@ -355,7 +349,7 @@ namespace BusinessLogic
 
                 foreach (var employeePreviousExperienceDetail in employeePreviousExperienceDetails)
                 {
-                    if (employeePreviousExperienceDetail.EmpId == 0)
+                    if (employeePreviousExperienceDetail.Id == 0)
                     {
                         _unitOfWork.EmployeePreviousExperienceRepository.Insert(employeePreviousExperienceDetail);
                     }
@@ -364,8 +358,6 @@ namespace BusinessLogic
                         _unitOfWork.EmployeePreviousExperienceRepository.Update(employeePreviousExperienceDetail);
                     }
                 }
-                _unitOfWork.EmployeePolicyRecordRepository.Update(employeePolicyRecord);
-
                 _unitOfWork.Save();
             }
             catch(Exception ex)

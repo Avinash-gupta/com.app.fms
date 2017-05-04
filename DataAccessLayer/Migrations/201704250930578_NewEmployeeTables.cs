@@ -1,8 +1,7 @@
 namespace DataAccessLayer.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class NewEmployeeTables : DbMigration
     {
         public override void Up()
