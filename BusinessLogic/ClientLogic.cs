@@ -48,8 +48,8 @@ namespace BusinessLogic
         {
             try
             {
-                var clientInformation = _unitOfWork.ClientInformationRepository.GetSingle(c => c.ClientId == clientId);
-                var billingDetails = _unitOfWork.BillingDetailsRepository.GetSingle(b => b.ClientId == clientId);
+                var clientInformation = _unitOfWork.ClientInformationRepository.Get(c => c.ClientId == clientId);
+                var billingDetails = _unitOfWork.BillingDetailsRepository.Get(b => b.ClientId == clientId);
                 return new ClientEntity
                 {
                     clientInformation = new ClientInformationEntity
@@ -98,11 +98,11 @@ namespace BusinessLogic
                 {
                     clientResults.Add(new ClientSearchResults
                     {
+                        Id = client.Id,
                         ClientId = client.ClientId,
-                        Name = client.Name,
-                        Segment = client.Segment,
-                        PhoneNos = client.PhoneNos,
-                        EmailId = client.EmailId
+                        ClientName = client.Name,
+                        PhoneNo = client.PhoneNos,
+                        Status = client.IsActive
                     });
                 }
                 return clientResults;
@@ -138,7 +138,7 @@ namespace BusinessLogic
         {
             try
             {
-                var client = _unitOfWork.ClientInformationRepository.GetSingle(c => c.ClientId == clientId);
+                var client = _unitOfWork.ClientInformationRepository.Get(c => c.ClientId == clientId);
                 client.IsActive = false;
                 _unitOfWork.ClientInformationRepository.Update(client);
                 _unitOfWork.Save();

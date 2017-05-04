@@ -4,6 +4,7 @@ namespace BusinessEntities.Employee
 {
     public class EmployeeSearchResults
     {
+        public int id { get; set; }
         public int EmpId { get; set; }
         public string EmployeeName { get; set; }
         public string Designation { get; set; } 

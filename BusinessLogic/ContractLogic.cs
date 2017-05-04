@@ -93,10 +93,10 @@ namespace BusinessLogic
             var contractHumanResourceNeedsList = new List<ContractHumanresourceneedsEntity>();
             try
             {
-                var _contractInformation = _unitOfWork.ContractInformationRepository.GetSingle(c => c.ContractId == contractId);
-                var _contractBilling = _unitOfWork.ContractBillingRepository.GetSingle(c => c.ContractId == contractId);
-                var _contractPaysheet = _unitOfWork.ContractPaysheetRepository.GetSingle(c => c.ContractId == contractId);
-                var _contractInvoice = _unitOfWork.ContractInvoiceHeadingTextRepository.GetSingle(c => c.ContractId == contractId);
+                var _contractInformation = _unitOfWork.ContractInformationRepository.Get(c => c.ContractId == contractId);
+                var _contractBilling = _unitOfWork.ContractBillingRepository.Get(c => c.ContractId == contractId);
+                var _contractPaysheet = _unitOfWork.ContractPaysheetRepository.Get(c => c.ContractId == contractId);
+                var _contractInvoice = _unitOfWork.ContractInvoiceHeadingTextRepository.Get(c => c.ContractId == contractId);
                 var _contractHumanResourceNeeds = _unitOfWork.ContractHumanResourceNeedsRepository.GetMany(c => c.ContractId == contractId);
 
                 var contractInformation = Mapper.Map<ContractInformationEntity>(_contractInformation);
@@ -127,7 +127,7 @@ namespace BusinessLogic
         {
             try
             {
-                var _contractInforamtion = _unitOfWork.ContractInformationRepository.GetSingle(c => c.ContractId == contractId);
+                var _contractInforamtion = _unitOfWork.ContractInformationRepository.Get(c => c.ContractId == contractId);
                 _contractInforamtion.IsActive = false;
                 _unitOfWork.ContractInformationRepository.Update(_contractInforamtion);
                 _unitOfWork.Save();
@@ -201,7 +201,7 @@ namespace BusinessLogic
                     {
                         Id = _contract.Id,
                         ClientId = _contract.ClientId,
-                        Name = _unitOfWork.ClientInformationRepository.GetSingle(c => c.ClientId == _contract.ClientId).Name,
+                        Name = _unitOfWork.ClientInformationRepository.Get(c => c.ClientId == _contract.ClientId).Name,
                         ContractId = _contract.ContractId,
                         ContractStartDate = _contract.StartDate,
                         ContractEndDate = _contract.EndDate

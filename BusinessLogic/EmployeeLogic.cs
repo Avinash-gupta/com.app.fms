@@ -155,18 +155,18 @@ namespace BusinessLogic
             var employeePreviousExperienceEntity = new List<EmployeePreviousExperienceEntity>();
             try
             {
-                var employeePersonalInfo = _unitOfWork.EmployeePersonalInfoRepository.GetSingle(e => e.EmpId == EmpId);
-                var employeeAddressDetails = _unitOfWork.EmployeeAddressDetailsRepository.GetSingle(e => e.EmpId == EmpId);
-                var employeeBankDetails = _unitOfWork.EmployeeBankDetailsRepository.GetSingle(e => e.EmpId == EmpId);
+                var employeePersonalInfo = _unitOfWork.EmployeePersonalInfoRepository.Get(e => e.EmpId == EmpId);
+                var employeeAddressDetails = _unitOfWork.EmployeeAddressDetailsRepository.Get(e => e.EmpId == EmpId);
+                var employeeBankDetails = _unitOfWork.EmployeeBankDetailsRepository.Get(e => e.EmpId == EmpId);
                 var employeeEducationDetails = _unitOfWork.EmployeeEducationDetailsRepository.GetMany(e => e.EmpId == EmpId);
-                var employeeExService = _unitOfWork.EmployeeExServiceRepository.GetSingle(e => e.EmpId == EmpId);
+                var employeeExService = _unitOfWork.EmployeeExServiceRepository.Get(e => e.EmpId == EmpId);
                 var employeeFamilyDetails = _unitOfWork.EmployeeFamilyDetailsRepository.GetMany(e => e.EmpId == EmpId);
-                var employeeInfo = _unitOfWork.EmployeeInfoRepository.GetSingle(e => e.EmpId == EmpId);
-                var employeePhysicalStandard = _unitOfWork.EmployeePhysicalStandardRepository.GetSingle(e => e.EmpId == EmpId);
-                var employeePolicyRecord = _unitOfWork.EmployeePolicyRecordRepository.GetSingle(e => e.EmpId == EmpId);
+                var employeeInfo = _unitOfWork.EmployeeInfoRepository.Get(e => e.EmpId == EmpId);
+                var employeePhysicalStandard = _unitOfWork.EmployeePhysicalStandardRepository.Get(e => e.EmpId == EmpId);
+                var employeePolicyRecord = _unitOfWork.EmployeePolicyRecordRepository.Get(e => e.EmpId == EmpId);
                 var employeePreviousExperiences = _unitOfWork.EmployeePreviousExperienceRepository.GetMany(e => e.EmpId == EmpId);
-                var employeeProofs = _unitOfWork.EmployeeProofsRepository.GetSingle(e => e.EmpId == EmpId);
-                var employeeSalaryDetails = _unitOfWork.EmployeeSalaryDetailsRepository.GetSingle(e => e.EmpId == EmpId);
+                var employeeProofs = _unitOfWork.EmployeeProofsRepository.Get(e => e.EmpId == EmpId);
+                var employeeSalaryDetails = _unitOfWork.EmployeeSalaryDetailsRepository.Get(e => e.EmpId == EmpId);
 
                 var employeePersonalInfoEntity = Mapper.Map<EmployeePersonalInfoEntity>(employeePersonalInfo);
                 var employeeAddressDetailsEntity = Mapper.Map<EmployeeAddressDetailsEntity>(employeeAddressDetails);
@@ -222,6 +222,7 @@ namespace BusinessLogic
                 foreach(var employee in employeePersonalInfoList)
                 {
                     searchResults.Add(new EmployeeSearchResults {
+                        id = employee.Id,
                         EmpId = employee.EmpId,
                         EmployeeName = employee.LastName + " " + employee.FirstName,
                         Designation = employee.Designation,
@@ -370,7 +371,7 @@ namespace BusinessLogic
         {
             try
             {
-                var employee = _unitOfWork.EmployeePersonalInfoRepository.GetSingle(e => e.EmpId == EmpId);
+                var employee = _unitOfWork.EmployeePersonalInfoRepository.Get(e => e.EmpId == EmpId);
                 employee.IsActive = false;
                 _unitOfWork.EmployeePersonalInfoRepository.Update(employee);
                 _unitOfWork.Save();

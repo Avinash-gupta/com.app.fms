@@ -18,3 +18,9 @@ C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLa
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.CreatedNewTablesClientInformationAndBillingAddress.resources
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.AddedIsActiveColumntoClientInformation.resources
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.ClientIdIsRequired.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.CreatedTablesForContracts.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.AddedNewColumnsToContractInformation.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.ChangesInContractTables.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.UpdateContractsTableColumnstoDateTimeType.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.RemovedCreatedDateTimeinContracts.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.RemovedCreatedDateTimeInAllTables.resources

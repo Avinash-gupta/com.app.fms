@@ -2,10 +2,11 @@
 {
     public class ClientSearchResults
     {
+        public int Id { get; set; }
         public string ClientId { get; set; }
-        public string Name { get; set; }
-        public string Segment { get; set; }
-        public int PhoneNos { get; set; }
-        public string EmailId { get; set; }
+        public string ClientName { get; set; }
+        public string City { get; set; }
+        public int PhoneNo { get; set; }
+        public bool Status { get; set; }
     }
 }
