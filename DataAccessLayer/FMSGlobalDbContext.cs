@@ -43,5 +43,6 @@ namespace DataAccessLayer
         public virtual DbSet<ContractInformation> ContractInformation { get; set; }
         public virtual DbSet<ContractInvoiceHeadingText> ContractInvoiceHeadingText { get; set; }
         public virtual DbSet<ContractPaysheet> ContractPaysheet { get; set; }
+        public virtual DbSet<Designations> Designations { get; set; }
     }
 }

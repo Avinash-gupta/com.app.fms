@@ -49,5 +49,6 @@ namespace DataAccessLayer.Models
         public int ClientEmployeeId { get; set; }
         public string PreviousEmployer { get; set; }
         public bool IsActive { get; set; }
+        public string ContractId { get; set; }
     }
 }

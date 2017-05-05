@@ -30,6 +30,7 @@ namespace DataAccessLayer
         private GenericRepository<ContractInformation> _ContractInformationRepository;
         private GenericRepository<ContractInvoiceHeadingText> _ContractInvoiceHeadingTextRepository;
         private GenericRepository<ContractPaysheet> _ContractPaysheetRepository;
+        private GenericRepository<Designations> _DesignationsRepository;
 
 
         #endregion
@@ -235,6 +236,16 @@ namespace DataAccessLayer
                 if (this._ContractPaysheetRepository == null)
                     this._ContractPaysheetRepository = new GenericRepository<ContractPaysheet>(_context);
                 return _ContractPaysheetRepository;
+            }
+        }
+
+        public GenericRepository<Designations> DesignationsRepository
+        {
+            get
+            {
+                if (this._DesignationsRepository == null)
+                    this._DesignationsRepository = new GenericRepository<Designations>(_context);
+                return _DesignationsRepository;
             }
         }
 

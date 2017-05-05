@@ -40,7 +40,6 @@ namespace BusinessEntities.Employees
         public DateTime IdCardValidTill { get; set; }
         public int ClientEmployeeId { get; set; }
         public string PreviousEmployer { get; set; }
-        public DateTime CreatedDateTime { get; set; }
-        public DateTime UpdatedDateTime { get; set; }
+        public string ContractId { get; set; }
     }
 }

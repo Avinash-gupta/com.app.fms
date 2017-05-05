@@ -112,6 +112,14 @@
     <Compile Include="Migrations\201705041455516_RemovedCreatedDateTimeInAllTables.Designer.cs">
       <DependentUpon>201705041455516_RemovedCreatedDateTimeInAllTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705050941225_AddedDesignationsTable.cs" />
+    <Compile Include="Migrations\201705050941225_AddedDesignationsTable.Designer.cs">
+      <DependentUpon>201705050941225_AddedDesignationsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705051015066_AddedContractIdToEmployee.cs" />
+    <Compile Include="Migrations\201705051015066_AddedContractIdToEmployee.Designer.cs">
+      <DependentUpon>201705051015066_AddedContractIdToEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BillingDetails.cs" />
     <Compile Include="Models\ClientInformation.cs" />
@@ -120,6 +128,7 @@
     <Compile Include="Models\ContractInformation.cs" />
     <Compile Include="Models\ContractInvoiceHeadingText.cs" />
     <Compile Include="Models\ContractPaysheet.cs" />
+    <Compile Include="Models\Designations.cs" />
     <Compile Include="Models\EmployeeAddressDetails.cs" />
     <Compile Include="Models\EmployeeBankDetails.cs" />
     <Compile Include="Models\EmployeeEducationDetails.cs" />
@@ -185,6 +194,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705041455516_RemovedCreatedDateTimeInAllTables.resx">
       <DependentUpon>201705041455516_RemovedCreatedDateTimeInAllTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705050941225_AddedDesignationsTable.resx">
+      <DependentUpon>201705050941225_AddedDesignationsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705051015066_AddedContractIdToEmployee.resx">
+      <DependentUpon>201705051015066_AddedContractIdToEmployee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -101,5 +101,12 @@ namespace BusinessEntities.Contract
         public int Basic { get; set; }
         public int DA { get; set; }
         public int HRA { get; set; }
+        public List<MappedEmployees> MappedEmployees {get; set;}
+    }
+
+    public class MappedEmployees
+    {
+        public int EmpId { get; set; }
+        public string Name { get; set; }
     }
 }

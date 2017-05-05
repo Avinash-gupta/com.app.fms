@@ -37,18 +37,8 @@ namespace BusinessLogic
             int Id;
             try
             {
-                var _contractInformation = Mapper.Map<ContractInformation>(contractEntity.ContractInformation);
-                var _contractBilling = Mapper.Map<ContractBilling>(contractEntity.ContractBilling);
-                var _contractPaysheet = Mapper.Map<ContractPaysheet>(contractEntity.ContractPaySheet);
-                var _contractInvoice = Mapper.Map<ContractInvoiceHeadingText>(contractEntity.ContractInvoiceHeadingText);
-
-                foreach(var humanResourceNeeds in contractEntity.ContractHumanResourceNeeds)
-                {
-                    var _humanResourceNeeds = Mapper.Map<ContractHumanResourceNeeds>(humanResourceNeeds);
-                    _contractHumanResourceNeedsList.Add(_humanResourceNeeds);
-                }
                 var contractsForThisClient = _unitOfWork.ContractInformationRepository.GetMany(c => c.ClientId == contractEntity.ContractInformation.ClientId);
-                if(contractsForThisClient != null)
+                if (contractsForThisClient != null)
                 {
                     Id = contractsForThisClient.ToList().Count + 1;
                 }
@@ -57,6 +47,26 @@ namespace BusinessLogic
                     Id = 1;
                 }
                 var contractId = contractEntity.ContractInformation.ClientId + "/" + Id;
+                var _contractInformation = Mapper.Map<ContractInformation>(contractEntity.ContractInformation);
+                var _contractBilling = Mapper.Map<ContractBilling>(contractEntity.ContractBilling);
+                var _contractPaysheet = Mapper.Map<ContractPaysheet>(contractEntity.ContractPaySheet);
+                var _contractInvoice = Mapper.Map<ContractInvoiceHeadingText>(contractEntity.ContractInvoiceHeadingText);
+
+                foreach(var humanResourceNeeds in contractEntity.ContractHumanResourceNeeds)
+                {
+                    if (humanResourceNeeds.MappedEmployees != null)
+                    {
+                        foreach (var mappedEmployee in humanResourceNeeds.MappedEmployees)
+                        {
+                            var _employee = _unitOfWork.EmployeePersonalInfoRepository.Get(e => e.EmpId == mappedEmployee.EmpId);
+                            _employee.ContractId = contractId;
+                            _unitOfWork.EmployeePersonalInfoRepository.Update(_employee);
+                        }
+                    }
+                    var _humanResourceNeeds = Mapper.Map<ContractHumanResourceNeeds>(humanResourceNeeds);
+                    _contractHumanResourceNeedsList.Add(_humanResourceNeeds);
+                }
+                
                 _contractInformation.ContractId = contractId;
                 _contractInformation.IsActive = true;
                 _unitOfWork.ContractInformationRepository.Insert(_contractInformation);

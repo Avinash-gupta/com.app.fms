@@ -1,4 +1,5 @@
-﻿using BusinessEntities.Employee;
+﻿using BusinessEntities;
+using BusinessEntities.Employee;
 using BusinessLogic;
 using System.Collections.Generic;
 using System.Web.Http;
@@ -53,6 +54,18 @@ namespace com.app.fms.Controllers
         public void Delete(int EmpId)
         {
             _employeeLogic.DeleteEmployee(EmpId);
+        }
+
+        [ActionName("GetAllDesignations")]
+        public List<DesignationsEntity> GetAllDesignations()
+        {
+            return _employeeLogic.GetAllDesignations();
+        }
+
+        [ActionName("GetEmployeeByDesignation")]
+        public List<EmployeeSearchResults> GetEmployeeByDesignation(string designation)
+        {
+            return _employeeLogic.GetEmployeesByDesignation(designation);
         }
 
     }

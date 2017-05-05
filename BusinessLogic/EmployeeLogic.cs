@@ -5,6 +5,7 @@ using DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using BusinessEntities;
 
 namespace BusinessLogic
 {
@@ -39,6 +40,8 @@ namespace BusinessLogic
             Mapper.CreateMap<EmployeePreviousExperience, EmployeePreviousExperienceEntity>();
             Mapper.CreateMap<EmployeePolicyRecordEntity, EmployeePolicyRecord>();
             Mapper.CreateMap<EmployeePolicyRecord, EmployeePolicyRecordEntity>();
+            Mapper.CreateMap<Designations, DesignationsEntity>();
+            Mapper.CreateMap<DesignationsEntity, Designations>();
         }
 
         public void CreatNewEmployee(EmployeeEntity employeeEntity)
@@ -228,7 +231,8 @@ namespace BusinessLogic
                         Designation = employee.Designation,
                         DateOfJoining = employee.DateOfJoining,
                         SitePostedTo = employee.SitePostedTo,
-                        Status = employee.Status
+                        Status = employee.Status,
+                        ContractId = employee.ContractId
                     });
                 }
                 return searchResults;
@@ -382,5 +386,43 @@ namespace BusinessLogic
             }
         }
 
+        public List<DesignationsEntity> GetAllDesignations()
+        {
+            try
+            {
+                var designationsList = new List<DesignationsEntity>();
+                var _designationsList = _unitOfWork.DesignationsRepository.GetAll();
+                foreach (var _designation in _designationsList)
+                {
+                    designationsList.Add(Mapper.Map<DesignationsEntity>(_designation));
+                }
+                return designationsList;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<EmployeeSearchResults> GetEmployeesByDesignation(string Designation)
+        {
+            var employeeList = new List<EmployeeSearchResults>();
+            var _employeeList = _unitOfWork.EmployeePersonalInfoRepository.GetManyQueryable(e => e.Designation == Designation);
+            foreach(var _employee in _employeeList)
+            {
+                employeeList.Add(new EmployeeSearchResults
+                {
+                    id = _employee.Id,
+                    EmpId = _employee.EmpId,
+                    EmployeeName = _employee.LastName + " " + _employee.FirstName,
+                    Designation = _employee.Designation,
+                    DateOfJoining = _employee.DateOfJoining,
+                    SitePostedTo = _employee.SitePostedTo,
+                    Status = _employee.Status,
+                    ContractId = _employee.ContractId
+                });
+            }
+            return employeeList;
+        }
     }
 }

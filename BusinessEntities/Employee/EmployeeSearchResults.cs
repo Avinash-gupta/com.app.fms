@@ -11,6 +11,6 @@ namespace BusinessEntities.Employee
         public string SitePostedTo { get; set; }
         public DateTime DateOfJoining { get; set; }
         public string Status { get; set; }
-
+        public string ContractId { get; set; }
     }
 }
