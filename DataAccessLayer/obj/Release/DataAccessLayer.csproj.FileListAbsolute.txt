@@ -26,3 +26,6 @@ C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLa
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.RemovedCreatedDateTimeInAllTables.resources
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.AddedDesignationsTable.resources
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.AddedContractIdToEmployee.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.ChangedDateTimeToString.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.ConvertedAllDateTimeToString.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.ChangingDateTimeToStringInPreviousExpTable.resources
