@@ -2,8 +2,8 @@
 {
     public class ClientEntity
     {
-        public ClientInformationEntity clientInformation { get; set; }
-        public BillingDetailsEntity billingDetails { get; set; }
+        public ClientInformationEntity ClientInformation { get; set; }
+        public BillingDetailsEntity BillingDetails { get; set; }
     }
 
     public class ClientInformationEntity
@@ -19,6 +19,7 @@
         public int LandLineNo { get; set; }
         public string EmailId { get; set; }
         public int FaxNo { get; set; }
+        public bool IsActive { get; set; }
     }
 
     public class BillingDetailsEntity
@@ -34,7 +35,7 @@
         public string SubUnit { get; set; }
         public string MainUnit { get; set; }
         public string Invoice { get; set; }
-        public string PaySheet { get; set; }
+        public string Paysheet { get; set; }
         public string Location { get; set; }
     }
 }

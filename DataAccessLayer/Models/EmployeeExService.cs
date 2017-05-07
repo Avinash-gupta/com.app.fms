@@ -11,8 +11,8 @@ namespace DataAccessLayer.Models
         public bool EmpExService { get; set; }
         public int ServiceNo { get; set; }
         public int Rank { get; set; }
-        public DateTime DateOfEnrollment { get; set; }
-        public DateTime DateOfDischarge { get; set; }
+        public string DateOfEnrollment { get; set; }
+        public string DateOfDischarge { get; set; }
         public string Crops { get; set; }
         public string Trade { get; set; }
         public string MedicalCategory { get; set; }

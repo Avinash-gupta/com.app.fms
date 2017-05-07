@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.Serialization;
 
 namespace BusinessEntities.Contract
 {
@@ -17,11 +20,11 @@ namespace BusinessEntities.Contract
         public int Id { get; set; }
         public string ClientId { get; set; }
         public string ContractIds { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public string StartDate { get; set; }
+        public string EndDate { get; set; }
         public int BGAmount { get; set; }
         public string TypeOfWork { get; set; }
-        public DateTime ValidityDate { get; set; }
+        public string ValidityDate { get; set; }
         public string BillingDates { get; set; }
         public string Payment { get; set; }
         public string PaySheetDates { get; set; }
@@ -66,7 +69,7 @@ namespace BusinessEntities.Contract
         public int Tds { get; set; }
         public string TDSOn { get; set; }
         public int PONO { get; set; }
-        public DateTime ExpectedDateOfReceipt { get; set; }
+        public string ExpectedDateOfReceipt { get; set; }
         public string ESIBranch { get; set; }
     }
 
@@ -107,6 +110,6 @@ namespace BusinessEntities.Contract
     public class MappedEmployees
     {
         public int EmpId { get; set; }
-        public string Name { get; set; }
+        public string EmployeeName { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace DataAccessLayer.Models
         public int RegionCode { get; set; } 
         public string InsuranceNominee { get; set; }
         public string BankCardReference { get; set; }
-        public DateTime NomineeDateOfBirth { get; set; }
+        public string NomineeDateOfBirth { get; set; }
         public string NomineeRelation { get; set; }
         public string InsuranceCover { get; set; }
         public int InsDebitAmount { get; set; }

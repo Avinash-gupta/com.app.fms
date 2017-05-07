@@ -16,6 +16,6 @@ namespace DataAccessLayer.Models
         public int YearsOfExperience { get; set; }
         public int PFNo { get; set; }
         public int ESINo { get; set; }
-        public DateTime DateOfResignation { get; set; }
+        public string DateOfResignation { get; set; }
     }
 }

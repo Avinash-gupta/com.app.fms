@@ -9,7 +9,7 @@ namespace DataAccessLayer.Models
         [Required]
         public int EmpId { get; set; }
         public string Name { get; set; }
-        public DateTime DateofBirth { get; set; }
+        public string DateofBirth { get; set; }
         public int Age { get; set; }
         public string RelationShip { get; set; }
         public string Occupation { get; set; }

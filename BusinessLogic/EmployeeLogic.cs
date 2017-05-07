@@ -220,7 +220,7 @@ namespace BusinessLogic
         {
             try
             {
-                var employeePersonalInfoList = _unitOfWork.EmployeePersonalInfoRepository.GetMany(e => e.IsActive);
+                var employeePersonalInfoList = _unitOfWork.EmployeePersonalInfoRepository.GetAll();
                 IList<EmployeeSearchResults> searchResults = new List<EmployeeSearchResults>();
                 foreach(var employee in employeePersonalInfoList)
                 {
@@ -231,7 +231,7 @@ namespace BusinessLogic
                         Designation = employee.Designation,
                         DateOfJoining = employee.DateOfJoining,
                         SitePostedTo = employee.SitePostedTo,
-                        Status = employee.Status,
+                        Status = employee.IsActive ? "Active":"Inactive",
                         ContractId = employee.ContractId
                     });
                 }
@@ -267,100 +267,145 @@ namespace BusinessLogic
                 {
                     var familyDetails = Mapper.Map<EmployeeFamilyDetails>(employeeFamilyDetail);
                     familyDetails.EmpId = employeeEntity.EmployeePersonalInfo.EmpID;
-                    employeeFamilyDetails.Add(familyDetails);
+                    if (familyDetails.Id == 0)
+                    {
+                        _unitOfWork.EmployeeFamilyDetailsRepository.Insert(familyDetails);
+                    }
+                    else
+                    {
+                        _unitOfWork.EmployeeFamilyDetailsRepository.Update(familyDetails);
+                    }
+                    //employeeFamilyDetails.Add(familyDetails);
                 }
 
                 foreach (var employeeEducationDetail in employeeEntity.EmployeeEducationDetails)
                 {
                     var educationDetails = Mapper.Map<EmployeeEducationDetails>(employeeEducationDetail);
                     educationDetails.EmpId = employeeEntity.EmployeePersonalInfo.EmpID;
-                    employeeEducationDetails.Add(educationDetails);
+                    if (educationDetails.Id == 0)
+                    {
+                        _unitOfWork.EmployeeEducationDetailsRepository.Insert(educationDetails);
+                    }
+                    else
+                    {
+                        _unitOfWork.EmployeeEducationDetailsRepository.Update(educationDetails);
+                    }
+                    //employeeEducationDetails.Add(educationDetails);
                 }
 
                 foreach (var employeePreviousExperience in employeeEntity.EmployeePreviousExperience)
                 {
                     var experienceDetails = Mapper.Map<EmployeePreviousExperience>(employeePreviousExperience);
                     experienceDetails.EmpId = employeeEntity.EmployeePersonalInfo.EmpID;
-                    employeePreviousExperienceDetails.Add(experienceDetails);
+                    if (experienceDetails.Id == 0)
+                    {
+                        _unitOfWork.EmployeePreviousExperienceRepository.Insert(experienceDetails);
+                    }
+                    else
+                    {
+                        _unitOfWork.EmployeePreviousExperienceRepository.Update(experienceDetails);
+                    }
+                    //employeePreviousExperienceDetails.Add(experienceDetails);
                 }
                 if(employeePersonalInfo != null)
                 {
+                    employeePersonalInfo.IsActive = true;
                     _unitOfWork.EmployeePersonalInfoRepository.Update(employeePersonalInfo);
                 }
                 if(employeeInfo != null)
                 {
                     employeeInfo.EmpId = employeePersonalInfo.EmpId;
-                    _unitOfWork.EmployeeInfoRepository.Update(employeeInfo);
+                    if(employeeInfo.Id == 0)
+                    {
+                        _unitOfWork.EmployeeInfoRepository.Insert(employeeInfo);
+                    }
+                    else
+                    {
+                        _unitOfWork.EmployeeInfoRepository.Update(employeeInfo);
+                    }
                 }
                 if(employeePhysicalStandard != null)
                 {
                     employeePhysicalStandard.EmpId = employeePersonalInfo.EmpId; ;
-                    _unitOfWork.EmployeePhysicalStandardRepository.Update(employeePhysicalStandard);
+                    if (employeePhysicalStandard.Id == 0)
+                    {
+                        _unitOfWork.EmployeePhysicalStandardRepository.Insert(employeePhysicalStandard);
+                    }
+                    else
+                    {
+                        _unitOfWork.EmployeePhysicalStandardRepository.Update(employeePhysicalStandard);
+                    }
                 }
                 if(employeeAddressDetails != null)
                 {
                     employeeAddressDetails.EmpId = employeePersonalInfo.EmpId;
-                    _unitOfWork.EmployeeAddressDetailsRepository.Update(employeeAddressDetails);
+                    if (employeeAddressDetails.Id == 0)
+                    {
+                        _unitOfWork.EmployeeAddressDetailsRepository.Insert(employeeAddressDetails);
+                    }
+                    else
+                    {
+                        _unitOfWork.EmployeeAddressDetailsRepository.Update(employeeAddressDetails);
+                    }
                 }
                 if (employeeBankDetails != null)
                 {
                     employeeBankDetails.EmpId = employeePersonalInfo.EmpId;
-                    _unitOfWork.EmployeeBankDetailsRepository.Update(employeeBankDetails);
+                    if (employeeBankDetails.Id == 0)
+                    {
+                        _unitOfWork.EmployeeBankDetailsRepository.Insert(employeeBankDetails);
+                    }
+                    else
+                    {
+                        _unitOfWork.EmployeeBankDetailsRepository.Update(employeeBankDetails);
+                    }
                 }
                 if(employeeSalaryDetails != null)
                 {
                     employeeSalaryDetails.EmpId = employeePersonalInfo.EmpId;
-                    _unitOfWork.EmployeeSalaryDetailsRepository.Update(employeeSalaryDetails);
+                    if (employeeSalaryDetails.Id == 0)
+                    {
+                        _unitOfWork.EmployeeSalaryDetailsRepository.Insert(employeeSalaryDetails);
+                    }
+                    else
+                    {
+                        _unitOfWork.EmployeeSalaryDetailsRepository.Update(employeeSalaryDetails);
+                    }
                 }
                 if(employeeProofs != null)
                 {
                     employeeProofs.EmpId = employeePersonalInfo.EmpId;
-                    _unitOfWork.EmployeeProofsRepository.Update(employeeProofs);
+                    if (employeeProofs.Id == 0)
+                    {
+                        _unitOfWork.EmployeeProofsRepository.Insert(employeeProofs);
+                    }
+                    else
+                    {
+                        _unitOfWork.EmployeeProofsRepository.Update(employeeProofs);
+                    }
                 }
                 if(employeeExService != null)
                 {
                     employeeExService.EmpId = employeePersonalInfo.EmpId;
-                    _unitOfWork.EmployeeExServiceRepository.Update(employeeExService);
+                    if (employeeExService.Id == 0)
+                    {
+                        _unitOfWork.EmployeeExServiceRepository.Insert(employeeExService);
+                    }
+                    else
+                    {
+                        _unitOfWork.EmployeeExServiceRepository.Update(employeeExService);
+                    }
                 }
                 if(employeePolicyRecord != null)
                 {
                     employeePolicyRecord.EmpId = employeePersonalInfo.EmpId;
-                    _unitOfWork.EmployeePolicyRecordRepository.Update(employeePolicyRecord);
-                }
-
-                foreach (var employeeFamilyDetail in employeeFamilyDetails)
-                {
-                    if (employeeFamilyDetail.Id == 0)
+                    if (employeePolicyRecord.Id == 0)
                     {
-                        _unitOfWork.EmployeeFamilyDetailsRepository.Insert(employeeFamilyDetail);
+                        _unitOfWork.EmployeePolicyRecordRepository.Insert(employeePolicyRecord);
                     }
                     else
                     {
-                        _unitOfWork.EmployeeFamilyDetailsRepository.Update(employeeFamilyDetail);
-                    }
-                }
-
-                foreach (var employeeEducationDetail in employeeEducationDetails)
-                {
-                    if (employeeEducationDetail.Id == 0)
-                    {
-                        _unitOfWork.EmployeeEducationDetailsRepository.Insert(employeeEducationDetail);
-                    }
-                    else
-                    {
-                        _unitOfWork.EmployeeEducationDetailsRepository.Update(employeeEducationDetail);
-                    }
-                }
-
-                foreach (var employeePreviousExperienceDetail in employeePreviousExperienceDetails)
-                {
-                    if (employeePreviousExperienceDetail.Id == 0)
-                    {
-                        _unitOfWork.EmployeePreviousExperienceRepository.Insert(employeePreviousExperienceDetail);
-                    }
-                    else
-                    {
-                        _unitOfWork.EmployeePreviousExperienceRepository.Update(employeePreviousExperienceDetail);
+                        _unitOfWork.EmployeePolicyRecordRepository.Update(employeePolicyRecord);
                     }
                 }
                 _unitOfWork.Save();

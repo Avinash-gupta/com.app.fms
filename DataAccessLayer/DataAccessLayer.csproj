@@ -120,6 +120,18 @@
     <Compile Include="Migrations\201705051015066_AddedContractIdToEmployee.Designer.cs">
       <DependentUpon>201705051015066_AddedContractIdToEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705070704475_ChangedDateTimeToString.cs" />
+    <Compile Include="Migrations\201705070704475_ChangedDateTimeToString.Designer.cs">
+      <DependentUpon>201705070704475_ChangedDateTimeToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705070711432_ConvertedAllDateTimeToString.cs" />
+    <Compile Include="Migrations\201705070711432_ConvertedAllDateTimeToString.Designer.cs">
+      <DependentUpon>201705070711432_ConvertedAllDateTimeToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705070834461_ChangingDateTimeToStringInPreviousExpTable.cs" />
+    <Compile Include="Migrations\201705070834461_ChangingDateTimeToStringInPreviousExpTable.Designer.cs">
+      <DependentUpon>201705070834461_ChangingDateTimeToStringInPreviousExpTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BillingDetails.cs" />
     <Compile Include="Models\ClientInformation.cs" />
@@ -200,6 +212,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705051015066_AddedContractIdToEmployee.resx">
       <DependentUpon>201705051015066_AddedContractIdToEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705070704475_ChangedDateTimeToString.resx">
+      <DependentUpon>201705070704475_ChangedDateTimeToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705070711432_ConvertedAllDateTimeToString.resx">
+      <DependentUpon>201705070711432_ConvertedAllDateTimeToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705070834461_ChangingDateTimeToStringInPreviousExpTable.resx">
+      <DependentUpon>201705070834461_ChangingDateTimeToStringInPreviousExpTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

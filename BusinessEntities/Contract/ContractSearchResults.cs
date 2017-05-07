@@ -12,7 +12,7 @@ namespace BusinessEntities.Contract
         public string ClientId { get; set; }
         public string Name { get; set; }
         public string ContractId { get; set; }
-        public DateTime ContractStartDate { get; set; }
-        public DateTime ContractEndDate { get; set; }
+        public string ContractStartDate { get; set; }
+        public string ContractEndDate { get; set; }
     }
 }

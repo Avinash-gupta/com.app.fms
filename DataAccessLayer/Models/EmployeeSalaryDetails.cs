@@ -34,7 +34,7 @@ namespace DataAccessLayer.Models
         public bool PFDeduct { get; set; }
         public bool PTDeduct { get; set; }
         public int EPFNo { get; set; }
-        public DateTime PFEnrollDate { get; set; }
+        public string PFEnrollDate { get; set; }
         public bool ESIDeduct { get; set; }
         public int ESINo { get; set; }
         public string ESIDispName { get; set; }

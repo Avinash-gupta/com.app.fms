@@ -27,7 +27,7 @@ namespace DataAccessLayer.Models
         public int Tds { get; set; }
         public string TDSOn { get; set; }
         public int PONO { get; set; }
-        public DateTime ExpectedDateOfReceipt { get; set; }
+        public string ExpectedDateOfReceipt { get; set; }
         public string ESIBranch { get; set; }
     }
 }

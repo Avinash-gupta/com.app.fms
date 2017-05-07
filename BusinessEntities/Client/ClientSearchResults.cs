@@ -7,6 +7,6 @@
         public string ClientName { get; set; }
         public string City { get; set; }
         public int PhoneNo { get; set; }
-        public bool Status { get; set; }
+        public string Status { get; set; }
     }
 }
