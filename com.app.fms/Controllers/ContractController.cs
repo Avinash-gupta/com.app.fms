@@ -21,9 +21,9 @@ namespace com.app.fms.Controllers
 
         //GET: api/Employee/GetById? EmplId = 1234
         [ActionName("GetBy")]
-        public ContractEntity GetBy(string contractId)
+        public ContractEntity GetBy(int Id)
         {
-            return _contractLogic.GetContractBy(contractId);
+            return _contractLogic.GetContractBy(Id);
         }
 
         [ActionName("GetAll")]

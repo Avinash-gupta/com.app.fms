@@ -98,12 +98,13 @@ namespace BusinessLogic
             }
         }
 
-        public ContractEntity GetContractBy(string contractId)
+        public ContractEntity GetContractBy(int Id)
         {
             var contractHumanResourceNeedsList = new List<ContractHumanresourceneedsEntity>();
             try
             {
-                var _contractInformation = _unitOfWork.ContractInformationRepository.Get(c => c.ContractId == contractId);
+                var _contractInformation = _unitOfWork.ContractInformationRepository.Get(c => c.Id == Id);
+                var contractId = _contractInformation.ContractId;
                 var _contractBilling = _unitOfWork.ContractBillingRepository.Get(c => c.ContractId == contractId);
                 var _contractPaysheet = _unitOfWork.ContractPaysheetRepository.Get(c => c.ContractId == contractId);
                 var _contractInvoice = _unitOfWork.ContractInvoiceHeadingTextRepository.Get(c => c.ContractId == contractId);

@@ -220,7 +220,7 @@ namespace BusinessLogic
         {
             try
             {
-                var employeePersonalInfoList = _unitOfWork.EmployeePersonalInfoRepository.GetAll();
+                var employeePersonalInfoList = _unitOfWork.EmployeePersonalInfoRepository.GetMany(e => e.IsActive);
                 IList<EmployeeSearchResults> searchResults = new List<EmployeeSearchResults>();
                 foreach(var employee in employeePersonalInfoList)
                 {

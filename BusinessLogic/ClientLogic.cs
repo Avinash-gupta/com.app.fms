@@ -94,7 +94,7 @@ namespace BusinessLogic
         {
             try
             {
-                var clients = _unitOfWork.ClientInformationRepository.GetAll();
+                var clients = _unitOfWork.ClientInformationRepository.GetMany(c => c.IsActive);
                 List<ClientSearchResults> clientResults = new List<ClientSearchResults>();
                 foreach (var client in clients)
                 {
