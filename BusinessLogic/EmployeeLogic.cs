@@ -225,7 +225,7 @@ namespace BusinessLogic
                 foreach(var employee in employeePersonalInfoList)
                 {
                     searchResults.Add(new EmployeeSearchResults {
-                        id = employee.Id,
+                        Id = employee.Id,
                         EmpId = employee.EmpId,
                         EmployeeName = employee.LastName + " " + employee.FirstName,
                         Designation = employee.Designation,
@@ -457,7 +457,7 @@ namespace BusinessLogic
             {
                 employeeList.Add(new EmployeeSearchResults
                 {
-                    id = _employee.Id,
+                    Id = _employee.Id,
                     EmpId = _employee.EmpId,
                     EmployeeName = _employee.LastName + " " + _employee.FirstName,
                     Designation = _employee.Designation,

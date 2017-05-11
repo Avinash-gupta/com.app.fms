@@ -132,7 +132,16 @@
     <Compile Include="Migrations\201705070834461_ChangingDateTimeToStringInPreviousExpTable.Designer.cs">
       <DependentUpon>201705070834461_ChangingDateTimeToStringInPreviousExpTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705101502323_AddedNewTableForAttendance.cs" />
+    <Compile Include="Migrations\201705101502323_AddedNewTableForAttendance.Designer.cs">
+      <DependentUpon>201705101502323_AddedNewTableForAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705101550075_ChangedColNameFromIsAttendendtoAttendend.cs" />
+    <Compile Include="Migrations\201705101550075_ChangedColNameFromIsAttendendtoAttendend.Designer.cs">
+      <DependentUpon>201705101550075_ChangedColNameFromIsAttendendtoAttendend.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\BillingDetails.cs" />
     <Compile Include="Models\ClientInformation.cs" />
     <Compile Include="Models\ContractBilling.cs" />
@@ -221,6 +230,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705070834461_ChangingDateTimeToStringInPreviousExpTable.resx">
       <DependentUpon>201705070834461_ChangingDateTimeToStringInPreviousExpTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705101502323_AddedNewTableForAttendance.resx">
+      <DependentUpon>201705101502323_AddedNewTableForAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705101550075_ChangedColNameFromIsAttendendtoAttendend.resx">
+      <DependentUpon>201705101550075_ChangedColNameFromIsAttendendtoAttendend.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

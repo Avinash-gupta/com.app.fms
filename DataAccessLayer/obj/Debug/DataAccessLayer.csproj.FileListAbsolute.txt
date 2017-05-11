@@ -29,3 +29,5 @@ C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLaye
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.ChangedDateTimeToString.resources
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.ConvertedAllDateTimeToString.resources
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.ChangingDateTimeToStringInPreviousExpTable.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.AddedNewTableForAttendance.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.ChangedColNameFromIsAttendendtoAttendend.resources

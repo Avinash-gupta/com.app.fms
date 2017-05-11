@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attendance\AttendanceEntity.cs" />
+    <Compile Include="Attendance\AttendanceSearchResults.cs" />
     <Compile Include="Client\ClientEntity.cs" />
     <Compile Include="Client\ClientSearchResults.cs" />
     <Compile Include="Contract\ContractEntity.cs" />
