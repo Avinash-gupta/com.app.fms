@@ -46,5 +46,28 @@ namespace BusinessLogic
                 throw ex;
             }
         }
+
+        public List<AttendanceEntity> GetAttendanceDetails(string contractId,DateTime fromDate,DateTime toDate)
+        {
+            try
+            {
+                var attendanceList = new List<AttendanceEntity>();
+                var context = new FMSGlobalDbContext();
+                var _attendaceList = from a in context.Attendance
+                                     where a.ContractId == contractId &&
+                                     (a.AttendanceDate >= fromDate && a.AttendanceDate <= toDate)
+                                     select a;
+                foreach (var _attendace in _attendaceList)
+                {
+                    attendanceList.Add(Mapper.Map<AttendanceEntity>(_attendace));
+                }
+                return attendanceList;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            
+        }
     }
 }
