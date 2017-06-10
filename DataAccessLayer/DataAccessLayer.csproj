@@ -140,6 +140,14 @@
     <Compile Include="Migrations\201705101550075_ChangedColNameFromIsAttendendtoAttendend.Designer.cs">
       <DependentUpon>201705101550075_ChangedColNameFromIsAttendendtoAttendend.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706090200409_AddedNewColumnsToAttendanceTable.cs" />
+    <Compile Include="Migrations\201706090200409_AddedNewColumnsToAttendanceTable.Designer.cs">
+      <DependentUpon>201706090200409_AddedNewColumnsToAttendanceTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706091733543_AddedIsSubmittedColumntoAttendance.cs" />
+    <Compile Include="Migrations\201706091733543_AddedIsSubmittedColumntoAttendance.Designer.cs">
+      <DependentUpon>201706091733543_AddedIsSubmittedColumntoAttendance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\BillingDetails.cs" />
@@ -167,7 +175,9 @@
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -236,6 +246,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705101550075_ChangedColNameFromIsAttendendtoAttendend.resx">
       <DependentUpon>201705101550075_ChangedColNameFromIsAttendendtoAttendend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706090200409_AddedNewColumnsToAttendanceTable.resx">
+      <DependentUpon>201706090200409_AddedNewColumnsToAttendanceTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706091733543_AddedIsSubmittedColumntoAttendance.resx">
+      <DependentUpon>201706091733543_AddedIsSubmittedColumntoAttendance.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

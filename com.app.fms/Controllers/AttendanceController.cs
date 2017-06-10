@@ -20,18 +20,27 @@ namespace com.app.fms.Controllers
             _attendanceLogic = new AttendanceLogic();
         }
 
-        [ActionName("Entry")]
+        [ActionName("SaveAttendance")]
         // POST: api/Attendance/Entry
-        public void Entry([FromBody]List<AttendanceEntity> attendanceList)
+        public void SaveAttendance([FromBody]List<AttendanceEntity> attendanceList)
         {
-            _attendanceLogic.AttendanceEntry(attendanceList);
+            _attendanceLogic.SaveAttendance(attendanceList);
         }
 
-        [ActionName("GetByDates")]
-        // GET: api/Attendance/GetByDates
-        public List<AttendanceEntity> GetByDates([FromUri]string contractId, [FromUri] DateTime fromDate,[FromUri] DateTime toDate)
+
+        [ActionName("SubmitAttendance")]
+        // POST: api/Attendance/Entry
+        public void SubmitAttendance([FromBody]List<AttendanceEntity> attendanceList)
         {
-            return _attendanceLogic.GetAttendanceDetails(contractId,fromDate,toDate);
+            _attendanceLogic.SubmitAttendance(attendanceList);
+        }
+
+        [ActionName("GetAttendanceDetailsByDate")]
+        // GET: api/Attendance/GetByDates
+        public List<AttendanceEntity> GetAttendanceDetailsByDate([FromUri]int id, [FromUri] string date)
+        {
+            var Date = Convert.ToDateTime(date);
+            return _attendanceLogic.GetAttendanceDetailsByDate(id, Date);
         }
     }
 }

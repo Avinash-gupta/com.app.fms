@@ -226,7 +226,7 @@ namespace BusinessLogic
                 {
                     searchResults.Add(new EmployeeSearchResults {
                         Id = employee.Id,
-                        EmpId = employee.EmpId,
+                        EmployeeId = employee.EmpId,
                         EmployeeName = employee.LastName + " " + employee.FirstName,
                         Designation = employee.Designation,
                         DateOfJoining = employee.DateOfJoining,
@@ -458,7 +458,7 @@ namespace BusinessLogic
                 employeeList.Add(new EmployeeSearchResults
                 {
                     Id = _employee.Id,
-                    EmpId = _employee.EmpId,
+                    EmployeeId = _employee.EmpId,
                     EmployeeName = _employee.LastName + " " + _employee.FirstName,
                     Designation = _employee.Designation,
                     DateOfJoining = _employee.DateOfJoining,
@@ -466,6 +466,31 @@ namespace BusinessLogic
                     Status = _employee.Status,
                     ContractId = _employee.ContractId
                 });
+            }
+            return employeeList;
+        }
+
+        public List<EmployeeSearchResults> GetEmployeesByContractId(int id)
+        {
+            var employeeList = new List<EmployeeSearchResults>();
+            var contractId = _unitOfWork.ContractInformationRepository.GetSingle(c => c.Id == id).ContractId;
+            var _employeeList = _unitOfWork.EmployeePersonalInfoRepository.GetManyQueryable(e => e.ContractId == contractId);
+            foreach (var _employee in _employeeList)
+            {
+                if (_employee.ContractId == contractId)
+                {
+                    employeeList.Add(new EmployeeSearchResults
+                    {
+                        Id = _employee.Id,
+                        EmployeeId = _employee.EmpId,
+                        EmployeeName = _employee.LastName + " " + _employee.FirstName,
+                        Designation = _employee.Designation,
+                        DateOfJoining = _employee.DateOfJoining,
+                        SitePostedTo = _employee.SitePostedTo,
+                        Status = _employee.Status,
+                        ContractId = _employee.ContractId
+                    });
+                }
             }
             return employeeList;
         }

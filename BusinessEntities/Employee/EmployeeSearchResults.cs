@@ -5,7 +5,7 @@ namespace BusinessEntities.Employee
     public class EmployeeSearchResults
     {
         public int Id { get; set; }
-        public int EmpId { get; set; }
+        public int EmployeeId { get; set; }
         public string EmployeeName { get; set; }
         public string Designation { get; set; } 
         public string SitePostedTo { get; set; }

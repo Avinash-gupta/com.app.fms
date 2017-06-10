@@ -68,5 +68,12 @@ namespace com.app.fms.Controllers
             return _employeeLogic.GetEmployeesByDesignation(designation);
         }
 
+
+        [ActionName("GetEmployeesByContractId")]
+        public List<EmployeeSearchResults> GetEmployeesByContractId(int id)
+        {
+            return _employeeLogic.GetEmployeesByContractId(id);
+        }
+
     }
 }

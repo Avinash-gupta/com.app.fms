@@ -4,3 +4,4 @@ C:\Projects\FMS\Development\com.app.fms\BusinessEntities\obj\Debug\BusinessEntit
 C:\Projects\FMS\Development\com.app.fms\BusinessEntities\obj\Debug\BusinessEntities.pdb
 C:\Projects\FMS\Development\com.app.fms\BusinessEntities\bin\Debug\Newtonsoft.Json.dll
 C:\Projects\FMS\Development\com.app.fms\BusinessEntities\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\FMS\Development\com.app.fms\BusinessEntities\obj\Debug\BusinessEntities.csprojResolveAssemblyReference.cache

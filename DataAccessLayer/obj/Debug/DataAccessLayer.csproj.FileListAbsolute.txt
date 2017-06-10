@@ -30,3 +30,6 @@ C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLaye
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.ChangingDateTimeToStringInPreviousExpTable.resources
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.AddedNewTableForAttendance.resources
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.ChangedColNameFromIsAttendendtoAttendend.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.AddedNewColumnsToAttendanceTable.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.AddedIsSubmittedColumntoAttendance.resources
