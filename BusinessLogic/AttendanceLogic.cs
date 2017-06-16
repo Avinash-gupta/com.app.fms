@@ -77,15 +77,21 @@ namespace BusinessLogic
 
         public List<AttendanceEntity> GetAttendanceDetailsByDate(int id,DateTime date)
         {
+            string contractId;
             try
             {
                 var attendanceList = new List<AttendanceEntity>();
                 var employeeList = new List<EmployeeSearchResults>();
-                var contractId = _unitOfWork.ContractInformationRepository.Get(c => c.Id == id).ContractId;
-                var _employeeList = _unitOfWork.EmployeePersonalInfoRepository.GetManyQueryable(e => e.ContractId == contractId);
-                foreach (var _employee in _employeeList)
+                using (var context = new FMSGlobalDbContext())
                 {
-                    if (_employee.ContractId == contractId)
+                    contractId = (from c in context.ContractInformation
+                                 where c.Id == id 
+                                 select c.ContractId).First();
+                }
+                if (contractId != null)
+                {
+                    var _employeeList = _unitOfWork.EmployeePersonalInfoRepository.GetMany(e => e.ContractId == contractId);
+                    foreach (var _employee in _employeeList)
                     {
                         var attendance = _unitOfWork.AttendanceRepository.Get(a => a.EmployeeId == _employee.Id && a.AttendanceDate == date);
                         attendanceList.Add(new AttendanceEntity
@@ -101,9 +107,14 @@ namespace BusinessLogic
                             AttendanceDate = date,
                             IsSubmitted = (attendance == null) ? false : attendance.IsSubmitted
                         });
+
                     }
+                    return attendanceList;
                 }
-                return attendanceList;
+                else
+                {
+                    return null;
+                }
             }
             catch(Exception ex)
             {

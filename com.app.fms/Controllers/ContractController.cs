@@ -33,6 +33,13 @@ namespace com.app.fms.Controllers
             return _contractLogic.GetAllContracts();
         }
 
+        [ActionName("GetAll")]
+        //GET : api/Employee/GetAll
+        public IList<ContractSearchResults> GetContractsByClientId(string clientId)
+        {
+            return _contractLogic.GetAllContracts();
+        }
+
         [ActionName("Create")]
         // POST: api/Employee/Create
         public void Create([FromBody]ContractEntity contractEntity)

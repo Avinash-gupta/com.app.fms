@@ -5,11 +5,9 @@ C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\bin\Debug\EntityFramewor
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\bin\Debug\EntityFramework.xml
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.CreateEmployeePersonalInfoTable.resources
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.AddedIsActiveColumn.resources
-C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.GenerateResource.Cache
-C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.dll
-C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.NewEmployeeTables.resources
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.UpdatedSchemaForEmployeeProofsAndEmployeeAddressDetails.resources
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.RemovedIDAndMadeEMpIdAsKey.resources
@@ -30,6 +28,8 @@ C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLaye
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.ChangingDateTimeToStringInPreviousExpTable.resources
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.AddedNewTableForAttendance.resources
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.ChangedColNameFromIsAttendendtoAttendend.resources
-C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.AddedNewColumnsToAttendanceTable.resources
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.AddedIsSubmittedColumntoAttendance.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.GenerateResource.Cache
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

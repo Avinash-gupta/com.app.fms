@@ -31,3 +31,5 @@ C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLa
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.ChangingDateTimeToStringInPreviousExpTable.resources
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.AddedNewTableForAttendance.resources
 C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.ChangedColNameFromIsAttendendtoAttendend.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.AddedNewColumnsToAttendanceTable.resources
+C:\Projects\FMS\Development\com.app.fms\DataAccessLayer\obj\Release\DataAccessLayer.Migrations.AddedIsSubmittedColumntoAttendance.resources

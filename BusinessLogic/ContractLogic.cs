@@ -226,6 +226,33 @@ namespace BusinessLogic
                 throw ex;
             }
         }
+
+        public List<ContractSearchResults> GetContractsByClientId(string clientId)
+        {
+            var contractsList = new List<ContractSearchResults>();
+            try
+            {
+                var _contractsList = _unitOfWork.ContractInformationRepository.GetMany(c => c.IsActive && c.ClientId == clientId);
+                foreach (var _contract in _contractsList)
+                {
+                    contractsList.Add(new ContractSearchResults
+                    {
+                        Id = _contract.Id,
+                        ClientId = _contract.ClientId,
+                        Name = _unitOfWork.ClientInformationRepository.Get(c => c.ClientId == _contract.ClientId).Name,
+                        ContractId = _contract.ContractId,
+                        ContractStartDate = _contract.StartDate,
+                        ContractEndDate = _contract.EndDate
+
+                    });
+                }
+                return contractsList;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
         
